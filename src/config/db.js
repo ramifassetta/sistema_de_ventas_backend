@@ -1,10 +1,10 @@
-import Sequelize from "sequelize";
-import dotenv from "dotenv"
-dotenv.config({path: ".env"})
+const Sequelize = require("sequelize");
+const dotenv = require("dotenv");
+dotenv.config({ path: ".env" });
 
-const db = new Sequelize(process.env.BD_NOMBRE, process.env.BD_USER, process.env.BD_PASS, {
-    host: process.env.BD_HOST,
-    port: 3306,
+const db = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    port: process.env.PORT,
     dialect: "mysql",
     define: {
         timestamps: true
@@ -17,4 +17,4 @@ const db = new Sequelize(process.env.BD_NOMBRE, process.env.BD_USER, process.env
     },
 });
 
-export default db;
+module.exports = db;

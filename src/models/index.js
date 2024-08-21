@@ -1,10 +1,10 @@
-import db from '../config/db.js';
-import Categoria from './categoria.js';
-import Productos from './producto.js';
+const db = require('../config/db.js');
+const Categorias = require('./Categorias');
+const Productos = require('./Productos');
 
 // Definir la relación uno a muchos entre Categoria y Productos
-Categoria.hasMany(Productos, { foreignKey: 'categoria_id', as: 'productos' });
-Productos.belongsTo(Categoria, { foreignKey: 'categoria_id', as: 'categoria' });
+Categorias.hasMany(Productos, { foreignKey: 'categoria_id', as: 'productos' });
+Productos.belongsTo(Categorias, { foreignKey: 'categoria_id', as: 'categoria' });
 
 // Exportar los modelos y la instancia de Sequelize
-export { Categoria, Productos, db };
+module.exports = { Categorias, Productos, db };

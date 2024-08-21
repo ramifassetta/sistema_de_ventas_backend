@@ -1,7 +1,7 @@
-import express from 'express';
-import productosRoutes from './routes/productosRoutes.js';
-import categoriasRoutes from './routes/categoriasRoutes.js';
-import dotenv from 'dotenv';
+const express = require('express');
+const productosRoutes = require('./routes/productosRoutes.js');
+const categoriasRoutes = require('./routes/categoriasRoutes.js');
+const dotenv = require('dotenv');
 
 dotenv.config(); // Carga variables de entorno
 
@@ -14,4 +14,4 @@ app.use(express.json());
 app.use('/api/productos', productosRoutes);
 app.use('/api/categorias', categoriasRoutes);
 
-export default app;
+module.exports = app;

@@ -1,7 +1,7 @@
-import app from './app.js';
-import dotenv from 'dotenv';
-import db from './config/db.js';
-import morgan from 'morgan';
+const app = require("./src/app.js");
+const dotenv = require('dotenv');
+const db = require('./src/config/db');
+const morgan = require('morgan');
 
 dotenv.config();
 

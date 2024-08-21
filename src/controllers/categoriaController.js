@@ -1,4 +1,4 @@
-import Categorias from '../models/categoria.js';
+const Categorias = require('../models/Categorias');
 
 const getAllCategories = async (req, res) => {
     try {
@@ -75,7 +75,7 @@ const deleteCategory = async (req, res) => {
     }
 };
 
-export default {
+module.exports = {
     getAllCategories,
     createCategory,
     getCategoryById,
