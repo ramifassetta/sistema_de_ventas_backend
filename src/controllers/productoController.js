@@ -47,7 +47,7 @@ const getProductById = async (req, res) => {
 
 const updateProduct = async (req, res) => {
     const { nombre, categoria_id, precio, imagen } = req.body; // Desglosar los datos
-    const { id } = req.params
+    const { id } = req.params;
 
     try {
         // Buscar el producto por ID
