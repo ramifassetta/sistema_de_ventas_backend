@@ -31,7 +31,7 @@ const createProduct = async (req, res) => {
 };
 
 const getProductById = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
 
     try {
         const producto = await Productos.findByPk(id);
