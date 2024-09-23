@@ -3,14 +3,17 @@ const productosRoutes = require('./routes/productosRoutes.js');
 const categoriasRoutes = require('./routes/categoriasRoutes.js');
 const dotenv = require('dotenv');
 
-dotenv.config(); // Carga variables de entorno
+dotenv.config(); 
 
+const cors = require('cors');
 const app = express();
 
-// Middleware para parsear el cuerpo de las solicitudes en formato JSON
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
 
-// Rutas
+app.use(cors({
+    origin: 'http://127.0.0.1:5173', 
+}));
+
 app.use('/api/productos', productosRoutes);
 app.use('/api/categorias', categoriasRoutes);
 

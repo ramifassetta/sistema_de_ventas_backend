@@ -36,7 +36,7 @@ const getCategoryById = async (req, res) => {
 };
 
 const updateCategory = async (req, res) => {
-    const { nombre } = req.body; // Desglosar los datos
+    const { nombre } = req.body; 
     const { id } = req.params
 
     try {
@@ -44,18 +44,17 @@ const updateCategory = async (req, res) => {
         const [updated] = await Categorias.update({
             nombre
         }, {
-            where: { id } // Usar el ID desde los parámetros de la solicitud
+            where: { id } 
         });
 
         if (updated) {
-            // Si se actualizó, obtener la categoría actualizada
             const updatedCategory = await Categorias.findByPk(req.params.id);
-            res.json(updatedCategory); // Retornar la categoría actualizada
+            res.json(updatedCategory); 
         } else {
-            res.status(404).json({ message: 'Categoría no encontrada' }); // Si no se encontró la categoría
+            res.status(404).json({ message: 'Categoría no encontrada' });
         }
     } catch (error) {
-        res.status(400).json({ message: error.message }); // Manejo de errores
+        res.status(400).json({ message: error.message }); 
     }
 };
 

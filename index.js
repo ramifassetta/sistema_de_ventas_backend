@@ -8,7 +8,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 // Configurar Morgan para registrar las solicitudes HTTP
-app.use(morgan('combined')); // 'combined' es un formato de registro predefinido
+app.use(morgan('dev')); // 'combined' es un formato de registro predefinido
 
 db.authenticate()
     .then(() => {
